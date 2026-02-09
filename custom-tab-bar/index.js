@@ -2,50 +2,24 @@ const app = getApp();
 
 Component({
   data: {
-    value: '', // 初始值设置为空，避免第一次加载时闪烁
-    unreadNum: 0, // 未读消息数量
+    value: '',
     list: [
-      {
-        icon: 'home',
-        value: 'index',
-        label: '首页',
-      },
-      {
-        icon: 'shop-1',
-        value: 'order',
-        label: '下单',
-      },
-      {
-        icon: 'task-1',
-        value: 'join',
-        label: '招募',
-      },
-      {
-        icon: 'user',
-        value: 'my',
-        label: '我的',
-      },
+      { icon: 'home', value: '/pages/home/index', label: '首页' },
+      { icon: 'shop-1', value: '/pages/order/index', label: '下单' },
+      { icon: 'task-1', value: '/pages/join/index', label: '招募' },
+      { icon: 'user', value: '/pages/my/index', label: '我的' },
     ],
   },
   lifetimes: {
     ready() {
-      const pages = getCurrentPages();
-      const curPage = pages[pages.length - 1];
-      if (curPage) {
-        const nameRe = /pages\/(\w+)\/index/.exec(curPage.route);
-        if (nameRe === null) return;
-        if (nameRe[1] && nameRe) {
-          this.setData({
-            value: nameRe[1],
-          });
-        }
-      }
+      const pages = getCurrentPages()
+      const pagesRoute = pages[pages.length - 1].route
+      this.setData({ value: '/' + pagesRoute })
     },
   },
   methods: {
-    handleChange(e) {
-      const { value } = e.detail;
-      wx.switchTab({ url: `/pages/${value}/index` });
+    onChange(e) {
+      wx.switchTab({ url: e.detail.value })
     },
   },
 });

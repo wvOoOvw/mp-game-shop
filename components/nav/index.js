@@ -3,10 +3,7 @@ Component({
     styleIsolation: 'shared',
   },
   properties: {
-    navType: {
-      type: String,
-      value: 'title',
-    },
+    navType: String,
     titleText: String,
   },
   data: {
