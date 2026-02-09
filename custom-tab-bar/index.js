@@ -11,9 +11,14 @@ Component({
         label: '首页',
       },
       {
-        icon: 'chat',
-        value: 'notice',
-        label: '消息',
+        icon: 'shop-1',
+        value: 'order',
+        label: '下单',
+      },
+      {
+        icon: 'task-1',
+        value: 'join',
+        label: '招募',
       },
       {
         icon: 'user',
@@ -35,23 +40,12 @@ Component({
           });
         }
       }
-
-      // 同步全局未读消息数量
-      this.setUnreadNum(app.globalData.unreadNum);
-      app.eventBus.on('unread-num-change', (unreadNum) => {
-        this.setUnreadNum(unreadNum);
-      });
     },
   },
   methods: {
     handleChange(e) {
       const { value } = e.detail;
       wx.switchTab({ url: `/pages/${value}/index` });
-    },
-
-    /** 设置未读消息数量 */
-    setUnreadNum(unreadNum) {
-      this.setData({ unreadNum });
     },
   },
 });
