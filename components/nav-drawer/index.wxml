@@ -1,1 +1,9 @@
-<t-drawer style="padding-top: 40rpx;" visible="{{visible}}" items="{{sidebar}}" placement="left" title="页面目录" bind:item-click="onClick" bind:close="onClose" />
+<t-drawer 
+    style="padding-top: max(32rpx, env(safe-area-inset-bottom));" 
+    title="" 
+    placement="left" 
+    visible="{{visible}}" 
+    items="{{sidebar}}" 
+    bind:item-click="onClick" 
+    bind:close="onClose" 
+/>

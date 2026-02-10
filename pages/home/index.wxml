@@ -4,8 +4,8 @@
     <t-navbar title="">
       <view slot="left">
         <view style="display: flex; align-items: center; gap: 24rpx;">
-          <t-icon bind:tap="onOpenDrawer" name="view-list" size="48rpx" />
-          <t-search style="width: 400rpx;" shape="round" placeholder="请搜索你想要的内容" />
+          <t-icon style="margin-left: 12rpx;" bind:tap="onOpenDrawer" name="view-list" size="40rpx" />
+          <t-search shape="round" placeholder="请搜索你想要的内容" />
         </view>
       </view>
     </t-navbar>
@@ -34,4 +34,4 @@
 </view>
 <!-- 浮窗 -->
 <t-message id="t-message" />
-<nav-drawer style="padding-top: 32rpx;" visible="{{drawerVisible}}" bind:onClose="onCloseDrawer" />
+<nav-drawer visible="{{drawerVisible}}" bind:onClose="onCloseDrawer" />
