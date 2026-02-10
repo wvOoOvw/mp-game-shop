@@ -1,8 +1,8 @@
-import request from '~/api/request';
-import useToastBehavior from '~/behaviors/useToast';
+import request from '../../api/request';
+import useToast from '../../utils/useToast';
 
 Page({
-  behaviors: [useToastBehavior],
+  behaviors: [useToast],
 
   data: {
     isLoad: false,

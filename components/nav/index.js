@@ -50,11 +50,6 @@ Component({
         isSidebar: false,
       },
       {
-        title: '数据图表页',
-        url: 'pages/dataCenter/index',
-        isSidebar: false,
-      },
-      {
         title: '登录注册页',
         url: 'pages/login/login',
         isSidebar: false,

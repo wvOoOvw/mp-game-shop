@@ -1,5 +1,10 @@
 {
-  "pages": ["pages/home/index", "pages/message/index", "pages/my/index"],
+  "pages": [
+    "pages/home/index",
+    "pages/order/index",
+    "pages/join/index",
+    "pages/my/index"
+  ],
   "usingComponents": {
     "t-toast": "tdesign-miniprogram/toast/toast"
   },
@@ -15,11 +20,6 @@
       "pages": ["index"]
     },
     {
-      "root": "pages/chat",
-      "name": "chat",
-      "pages": ["index"]
-    },
-    {
       "root": "pages/login",
       "name": "login",
       "pages": ["login"]
@@ -28,11 +28,6 @@
       "root": "pages/loginCode",
       "name": "loginCode",
       "pages": ["loginCode"]
-    },
-    {
-      "root": "pages/dataCenter",
-      "name": "dataCenter",
-      "pages": ["index"]
     },
     {
       "root": "pages/setting",
@@ -59,13 +54,18 @@
         "text": "首页"
       },
       {
+        "pagePath": "pages/order/index",
+        "text": "下单"
+      },
+      {
+        "pagePath": "pages/join/index",
+        "text": "招募"
+      },
+      {
         "pagePath": "pages/my/index",
         "text": "我的"
       }
     ]
-  },
-  "resolveAlias": {
-    "~/*": "/*"
   },
   "sitemapLocation": "sitemap.json"
 }

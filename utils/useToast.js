@@ -1,6 +1,6 @@
 import Toast, { hideToast } from 'tdesign-miniprogram/toast/index';
 
-const useToastBehavior = Behavior({
+const useToast = Behavior({
   methods: {
     onShowToast(selector, message) {
       Toast({
@@ -19,4 +19,4 @@ const useToastBehavior = Behavior({
   },
 });
 
-export default useToastBehavior;
+export default useToast;

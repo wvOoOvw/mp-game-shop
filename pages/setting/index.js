@@ -1,7 +1,7 @@
-import useToastBehavior from '~/behaviors/useToast';
+import useToast from '../../utils/useToast';
 
 Page({
-  behaviors: [useToastBehavior],
+  behaviors: [useToast],
   data: {
     menuData: [
       [

@@ -1,0 +1,32 @@
+@import '/variable.less';
+
+.home-container {
+  height: calc(100vh - @tab-bar-height - @nav-bar-height);
+  overflow: hidden;
+
+  .t-tabs {
+    --td-tab-item-tag-height: @home-tab-item-height;
+    --td-tab-font-size: @font-size-small;
+    width: 100%;
+    height: 100%;
+
+    &__content {
+      background-color: @bg-color;
+    }
+  }
+
+  .home-card-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24rpx 12rpx;
+    padding: 24rpx;
+    background-color: @bg-color;
+  }
+}
+
+.home-release {
+  position: fixed;
+  bottom: 208rpx;
+  right: 32rpx;
+}
