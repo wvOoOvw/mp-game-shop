@@ -1,25 +1,36 @@
-<nav nav-type="search" />
+<view style="overflow: hidden; height: calc(100vh - 112rpx - env(safe-area-inset-bottom)); display: flex; flex-direction: column;">
 
-<view class="home-container">
-  <t-tabs defaultValue="recommend">
-    <t-tab-panel label="推荐" value="recommend">
-      <t-pull-down-refresh value="{{ pullDownEnable }}" bind:refresh="onRefresh" loadingTexts="{{['下拉刷新', '松手刷新', '正在刷新', '刷新完成']}}">
-        <view class="home-card-list">
-          <t-swiper list="{{ swiperList }}" navigation="{{ { type: 'dots-bar' } }}" height="488rpx" style="width: 340rpx" />
-          <card wx:for="{{ cardInfo }}" wx:key="index" desc="{{item.desc}}" url="{{item.url}}" tags="{{item.tags}}" />
-        </view>
-      </t-pull-down-refresh>
-    </t-tab-panel>
-    <t-tab-panel label="我的关注" value="follow">
-      <view class="home-card-list">
+  <view style="flex-shrink: 0;">
+    <nav nav-type="search"></nav>
+  </view>
+
+  <view style="flex-shrink: 0;">
+    <t-tabs value="{{ tab }}" bind:change="onChangeTab">
+      <t-tab-panel label="推荐" value="{{ 0 }}"></t-tab-panel>
+      <t-tab-panel label="我的关注" value="{{ 1 }}"></t-tab-panel>
+    </t-tabs>
+  </view>
+
+  <view style="flex-grow: 1; overflow: scroll;">
+    <t-pull-down-refresh wx:if="{{ tab === 0 }}" value="{{ pullDownEnable }}" bind:refresh="onRefresh" loadingTexts="{{['下拉刷新', '松手刷新', '正在刷新', '刷新完成']}}">
+      <view style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24rpx 12rpx; padding: 24rpx;">
+        <t-swiper list="{{ swiperList }}" navigation="{{ { type: 'dots-bar' } }}" height="488rpx" style="width: 340rpx" />
+        <card wx:for="{{ cardInfo }}" wx:key="index" desc="{{item.desc}}" url="{{item.url}}" tags="{{item.tags}}" />
+      </view>
+    </t-pull-down-refresh>
+    <t-pull-down-refresh wx:if="{{ tab === 1 }}" value="{{ pullDownEnable }}" bind:refresh="onRefresh" loadingTexts="{{['下拉刷新', '松手刷新', '正在刷新', '刷新完成']}}">
+      <view style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24rpx 12rpx; padding: 24rpx;">
         <card wx:for="{{ cardCollectInfo }}" wx:key="index" desc="{{item.desc}}" url="{{item.url}}" tags="{{item.tags}}" />
       </view>
-    </t-tab-panel>
-  </t-tabs>
+    </t-pull-down-refresh>
+  </view>
+
 </view>
 
-<view class="home-release">
-  <t-button theme="primary" size="large" icon="add" shape="round" bindtap="onRelease">发布</t-button>
+<view style="position: fixed; bottom: 208rpx; right: 32rpx;">
+  <t-button theme="primary" size="large" icon="add" shape="round" bindtap="onRelease">
+    发布
+  </t-button>
 </view>
 
 <t-message id="t-message" />

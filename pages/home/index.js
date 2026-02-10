@@ -10,6 +10,7 @@ page.data = {
   cardInfo: [],
   cardCollectInfo: [],
   swiperList: [],
+  tab: 0,
 }
 
 page.onLoad = async function (option) {
@@ -63,6 +64,12 @@ page.showOperMsg = function (content) {
 page.onRelease = function () {
   wx.navigateTo({
     url: '/pages/release/index',
+  })
+}
+
+page.onChangeTab = function (value) {
+  this.setData({
+    tab: value.detail.value
   })
 }
 
