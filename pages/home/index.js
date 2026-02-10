@@ -80,4 +80,10 @@ page.onCloseDrawer = function () {
   })
 }
 
+page.onSearch = function () {
+  wx.navigateTo({
+    url: '/pages/search/index',
+  })
+}
+
 Page(page)

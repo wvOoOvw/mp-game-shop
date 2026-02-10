@@ -5,7 +5,7 @@
       <view slot="left">
         <view style="display: flex; align-items: center; gap: 24rpx;">
           <t-icon style="margin-left: 12rpx;" bind:tap="onOpenDrawer" name="view-list" size="40rpx" />
-          <t-search shape="round" placeholder="请搜索你想要的内容" />
+          <t-search shape="round" placeholder="请搜索你想要的内容" bind:tap="onSearch" />
         </view>
       </view>
     </t-navbar>
