@@ -1,5 +1,5 @@
-import Message from 'tdesign-miniprogram/message/index';
-import request from '../../utils/request';
+import Message from 'tdesign-miniprogram/message/index'
+import request from '../../utils/request'
 
 const app = getApp()
 
@@ -51,19 +51,19 @@ page.onRefresh = async function () {
   }, 1500)
 }
 
-page.onRefresh = function (content) {
+page.showOperMsg = function (content) {
   Message.success({
     context: this,
     offset: [120, 32],
     duration: 4000,
     content,
-  });
+  })
 }
 
-page.onRealease = function () {
+page.onRelease = function () {
   wx.navigateTo({
     url: '/pages/release/index',
-  });
+  })
 }
 
 Page(page)
