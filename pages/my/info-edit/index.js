@@ -1,4 +1,4 @@
-import request from '../../api/request';
+import request from '../../utils/request';
 import { areaList } from './areaData.js';
 
 Page({
