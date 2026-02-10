@@ -1,16 +1,23 @@
 <view style="overflow: hidden; height: calc(100vh - 112rpx - env(safe-area-inset-bottom)); display: flex; flex-direction: column;">
-
+  <!-- 状态栏 -->
   <view style="flex-shrink: 0;">
-    <nav nav-type="search"></nav>
+    <t-navbar title="">
+      <view slot="left">
+        <view style="display: flex; align-items: center; gap: 24rpx;">
+          <t-icon bind:tap="onOpenDrawer" name="view-list" size="48rpx" />
+          <t-search style="width: 400rpx;" shape="round" placeholder="请搜索你想要的内容" />
+        </view>
+      </view>
+    </t-navbar>
   </view>
-
+  <!-- 类型标签栏 -->
   <view style="flex-shrink: 0;">
     <t-tabs value="{{ tab }}" bind:change="onChangeTab">
       <t-tab-panel label="推荐" value="{{ 0 }}"></t-tab-panel>
       <t-tab-panel label="我的关注" value="{{ 1 }}"></t-tab-panel>
     </t-tabs>
   </view>
-
+  <!-- 卡片列表 -->
   <view style="flex-grow: 1; overflow: scroll;">
     <t-pull-down-refresh wx:if="{{ tab === 0 }}" value="{{ pullDownEnable }}" bind:refresh="onRefresh" loadingTexts="{{['下拉刷新', '松手刷新', '正在刷新', '刷新完成']}}">
       <view style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24rpx 12rpx; padding: 24rpx;">
@@ -24,13 +31,7 @@
       </view>
     </t-pull-down-refresh>
   </view>
-
 </view>
-
-<view style="position: fixed; bottom: 208rpx; right: 32rpx;">
-  <t-button theme="primary" size="large" icon="add" shape="round" bindtap="onRelease">
-    发布
-  </t-button>
-</view>
-
+<!-- 浮窗 -->
 <t-message id="t-message" />
+<nav-drawer style="padding-top: 32rpx;" visible="{{drawerVisible}}" bind:onClose="onCloseDrawer" />

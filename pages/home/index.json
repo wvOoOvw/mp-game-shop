@@ -7,8 +7,11 @@
     "t-swiper-nav": "tdesign-miniprogram/swiper-nav/swiper-nav",
     "t-pull-down-refresh": "tdesign-miniprogram/pull-down-refresh/pull-down-refresh",
     "t-message": "tdesign-miniprogram/message/message",
+    "t-navbar": "tdesign-miniprogram/navbar/navbar",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-search": "tdesign-miniprogram/search/search",
     "t-button": "tdesign-miniprogram/button/button",
-    "nav": "/components/nav",
+    "nav-drawer": "/components/nav-drawer",
     "card": "/components/card"
   }
 }

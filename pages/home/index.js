@@ -3,7 +3,7 @@ import request from '../../utils/request'
 
 const app = getApp()
 
-const page = {}
+const page = Object()
 
 page.data = {
   pullDownEnable: false,
@@ -11,6 +11,7 @@ page.data = {
   cardCollectInfo: [],
   swiperList: [],
   tab: 0,
+  drawerVisible: false,
 }
 
 page.onLoad = async function (option) {
@@ -61,15 +62,21 @@ page.showOperMsg = function (content) {
   })
 }
 
-page.onRelease = function () {
-  wx.navigateTo({
-    url: '/pages/release/index',
+page.onChangeTab = function (e) {
+  this.setData({
+    tab: e.detail.value
   })
 }
 
-page.onChangeTab = function (value) {
+page.onOpenDrawer = function () {
   this.setData({
-    tab: value.detail.value
+    drawerVisible: true
+  })
+}
+
+page.onCloseDrawer = function () {
+  this.setData({
+    drawerVisible: false
   })
 }
 

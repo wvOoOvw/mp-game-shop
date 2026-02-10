@@ -1,0 +1,1 @@
+<t-drawer style="padding-top: 40rpx;" visible="{{visible}}" items="{{sidebar}}" placement="left" title="页面目录" bind:item-click="onClick" bind:close="onClose" />
